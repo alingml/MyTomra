@@ -3,15 +3,15 @@ import { View, Text, StyleSheet } from "react-native";
 
 import Icon from "react-native-vector-icons/FontAwesome";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <View style={styles.header}>
       <Text style={styles.headerFonts}>
-        <Icon name="globe" size={19} /> Select Location
+        <Icon name={props.leftIconName} size={19} /> {props.leftText}
       </Text>
       <Text style={styles.headerFonts}>
-        Language
-        <Icon name="language" size={19} />
+        {props.rightText}
+        <Icon name={props.rightIconName} size={19} />
       </Text>
     </View>
   );

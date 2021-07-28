@@ -2,7 +2,6 @@ import React from "react";
 
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
-import LogIn from "./Components/Log In Screen/LogIn";
 
 const Buttons = () => {
   return (

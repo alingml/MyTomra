@@ -5,7 +5,7 @@ const AppInfo = () => {
   return (
     <View style={styles.appInfoContainer}>
       <Image
-        source={require("../../assets/logo.png")}
+        source={require("../../assets/logo-carbon.png")}
         style={styles.logoStyle}
       />
       <Text style={styles.appHero}>It's the more rewarding way to recycle</Text>
