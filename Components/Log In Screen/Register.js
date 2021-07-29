@@ -9,7 +9,7 @@ const Register = () => {
 
   return(
     <View style={styles.loginContainer}>
-      <Header leftText={"Back"} rightText={"Language"} leftIconName={"chevron-left"} rightIconName={"language"} />
+      <Header leftText={"Back"} rightText={"Language"} leftIconName={"chevron-left"} rightIconName={"language"} leftIconSize={18} rightIconSize={17} />
       <View style={styles.options}>
 
         <Text style={styles.signIn}>Sign in</Text>

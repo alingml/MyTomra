@@ -1,27 +1,29 @@
 import React from "react";
 import "react-native-gesture-handler";
-import { NavigationContainer } from "@react-navigation/native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
 import { StyleSheet, Text, View } from "react-native";
 
-import Header from "./Components/Shared/Header";
 import AppInfo from "./Components/Welcome Screen/AppInfo";
-import Buttons from "./Components/Welcome Screen/Buttons";
-import Login from "./Components/Log In Screen/Login";
-import Register from "./Components/Log In Screen/Register";
+import UserAccount from "./Components/Logged/UserAccount";
+import { DrawerActions } from "react-navigation-drawer";
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from "@react-navigation/drawer";
+
+
+const Drawer = createDrawerNavigator();
+
 
 export default function App() {
   return (
-    <NavigationContainer>
       <View style={styles.container}>
-        <Login />
-        {/* <Header leftText={"Location"} rightText={"Language"} leftIconName={"globe"} rightIconName={"language"}/>
         <AppInfo />
-        <Buttons style={styles.buttonStyle} /> */}
       </View>
-    </NavigationContainer>
-  );
-}
+      // <NavigationContainer >
+      //   <Drawer.Navigator >
+      //     <Drawer.Screen name="Home" component={AppInfo} />
+      //     <Drawer.Screen name="SecondScreen" component={UserAccount} />
+      //   </Drawer.Navigator>
+      // </NavigationContainer>
+  )};
 
 const styles = StyleSheet.create({
   container: {

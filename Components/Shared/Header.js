@@ -7,11 +7,11 @@ const Header = (props) => {
   return (
     <View style={styles.header}>
       <Text style={styles.headerFonts}>
-        <Icon name={props.leftIconName} size={19} /> {props.leftText}
+        <Icon name={props.leftIconName} size={props.leftIconSize} /> {props.leftText}
       </Text>
       <Text style={styles.headerFonts}>
         {props.rightText}
-        <Icon name={props.rightIconName} size={19} />
+        <Icon name={props.rightIconName} size={props.rightIconSize} />
       </Text>
     </View>
   );
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingTop: 5,
+    marginTop: 20,
     paddingBottom: 0,
   },
   headerFonts: {
