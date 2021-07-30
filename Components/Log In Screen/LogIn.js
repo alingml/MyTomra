@@ -4,17 +4,15 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 
 
-
 import Header from "../Shared/Header";
 
-
-const Login = () => {
+const Login = ({navigation}) => {
 
     const [modalVisible, setModalVisible] = useState(false);
 
   return(
     <View style={styles.loginContainer}>
-      <Header leftText={"Back"} rightText={"Language"} leftIconName={"chevron-left"} rightIconName={"language"} leftIconSize={18} rightIconSize={17}/>
+      <Header leftText={"Back"} rightText={"Language"} leftIconName={"chevron-left"} rightIconName={"language"} leftIconSize={18} rightIconSize={17} />
       <View style={styles.options}>
       <View
  	 style={{
@@ -39,7 +37,6 @@ const Login = () => {
             <Pressable
               onPress={() => setModalVisible(!modalVisible)}
             >
-
               <Icon style={styles.closeIcon} name="close" size={18} />
             </Pressable>
             {/* </View> */}
@@ -68,9 +65,11 @@ const Login = () => {
       </SafeAreaView>
       <View>
           <TouchableOpacity>
+            <Pressable onPress={() => navigation.navigate('UserAccount')}>
             <Text style={styles.title}>
                 Sign In
             </Text>
+            </Pressable>
           </TouchableOpacity>
       </View>
     </View>
@@ -80,12 +79,14 @@ const Login = () => {
 const styles = StyleSheet.create({
   loginContainer: {
     flex:1,
+    backgroundColor: "#6ECEB2",
+    paddingHorizontal: 20
+
   },
   options: {
     flex:1,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginHorizontal: 15,
 
 
   },
@@ -103,7 +104,6 @@ const styles = StyleSheet.create({
 
   fields: {
       flex:3,
-      marginHorizontal:15
   },
 
   emailInput: {
@@ -127,7 +127,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     paddingVertical: 15,
     borderRadius: 50,
-    marginHorizontal: 15,
     fontSize: 18,
     marginVertical: 20
   },

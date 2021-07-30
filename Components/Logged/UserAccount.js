@@ -6,7 +6,7 @@ import Header from "../Shared/Header";
 import AppInfo from "../../Components/Welcome Screen/AppInfo";
  
 
-const UserAccount = () => {
+const UserAccount = ({navigation}) => {
 
     return (
             <View style={styles.userAccountContainer}>

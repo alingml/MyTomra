@@ -1,3 +1,4 @@
+import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
@@ -6,8 +7,8 @@ import Icon from "react-native-vector-icons/FontAwesome";
 const Header = (props) => {
   return (
     <View style={styles.header}>
-      <Text style={styles.headerFonts}>
-        <Icon name={props.leftIconName} size={props.leftIconSize} /> {props.leftText}
+      <Text style={styles.headerFonts} >
+        <Icon name={props.leftIconName} size={props.leftIconSize}/> {props.leftText}
       </Text>
       <Text style={styles.headerFonts}>
         {props.rightText}
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 20,
+    marginTop: 40,
     paddingBottom: 0,
   },
   headerFonts: {

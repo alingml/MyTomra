@@ -11,7 +11,7 @@ const AppInfo = () => {
     <Header leftText={"Location"} rightText={"Language"} leftIconName={"globe"} rightIconName={"language"} leftIconSize={18} rightIconSize={17}/>
     <View>
       <Image
-        source={require("../../assets/logo-carbon.png")}
+        source={require("../../assets/logo.png")}
         style={styles.logoStyle}
       />
       <Text style={styles.appHero}>It's the more rewarding way to recycle</Text>

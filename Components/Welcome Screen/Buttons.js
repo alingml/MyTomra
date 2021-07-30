@@ -2,23 +2,14 @@ import React from "react";
 
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
-import { NavigationContainer } from "@react-navigation/native";
-import {createStackNavigator} from "@react-navigation/stack";
 import Login from "../../Components/Log In Screen/Login";
 
-const Stack = createStackNavigator();
 
-
-const Buttons = ({navigation}) => {
-
-    const onPressHandler = () => {
-      navigation.navigate(Login)
-    }
-
+const Buttons = () => {
 
   return (
     <View>
-      <TouchableOpacity style={styles.appButtonContainer} onPress={onPressHandler}>
+      <TouchableOpacity style={styles.appButtonContainer}>
         <Text style={styles.title}>
           <Icon name="user" size={19} />
           Log In <Icon name="chevron-right" size={17} />
