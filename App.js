@@ -18,16 +18,16 @@ import TermsService from "./Components/Logged/TermsService";
 import PrivacyPolicy from "./Components/Logged/PrivacyPolicy";
 import Contact from "./Components/Logged/Contact";
 
+import Logo from "/Users/alin/MyTomra/assets/logo-carbon.png"
 
 const HomeScreen = ({navigation}) => {
   return (
     <View style={styles.appInfoContainer}>
-      <Header leftText={"Location"} rightText={"Language"} leftIconName={"globe"} rightIconName={"language"} leftIconSize={18} rightIconSize={17} />
       <View>
-        {/* <Image
-        source={"../../assets/logo-carbon.png"}
+        <Image
+        source={Logo}
         style={styles.logoStyle}
-      /> */}
+      />
         <Text style={styles.appHero}>It's the more rewarding way to recycle</Text>
         <Text style={styles.appInfo}>
           Collect your recyclables, return them to your nearest recycling point
@@ -59,96 +59,19 @@ const HomeScreen = ({navigation}) => {
   )
 }
 
-const LoggedScreen = ({navigation}) => {
-  return (
-    <View style={styles.loginContainer}>
-      <Header leftText={"Back"} rightText={"Language"} leftIconName={"chevron-left"} rightIconName={"language"} leftIconSize={18} rightIconSize={17} />
-      <View style={styles.options}>
-      <View
- 	 style={{
-    borderColor: "black",
-     }}>
-        <Text style={styles.signIn}>Sign in</Text>
-    </View>
-        <Text style={styles.register}>Register</Text>
-      </View>
-      <SafeAreaView style={styles.fields}>
-        <TextInput value={"Email"} style={styles.emailInput}/>
-        <TextInput value={"Password"} style={styles.passwordInput}/>
-        <Modal
-        animationType="slide"
-        presentationStyle="formSheet"
-        visible={modalVisible}
-        onRequestClose={()=> {
-            setModalVisible(!modalVisible)
-        }}
-        >
-            {/* <View style={styles.closeIconView}> */}
-            <Pressable
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-
-              <Icon style={styles.closeIcon} name="close" size={18} />
-            </Pressable>
-            {/* </View> */}
-            <View style={styles.modalContainer}>
-            <Text style={styles.modalTitle}>Reset Password</Text>
-            <Text style={styles.modalInfo}>Type your address below and we will send you an email with instructions on how to reset your password.</Text>
-            <TextInput value={"Email"} style={styles.emailInput}/>
-            <TouchableOpacity style={styles.buttonContainer}>
-            <Pressable
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-        <Text style={styles.subtitle}>
-          Send
-        </Text>
-        </Pressable>
-      </TouchableOpacity>
-            </View>
-        </Modal>
-        <TouchableOpacity>
-            <Pressable
-            onPress={() => setModalVisible(true)}
-            >
-        <Text style={styles.forgotPassword}>Forgot Password?</Text>
-        </Pressable>
-        </TouchableOpacity>
-      </SafeAreaView>
-      <View>
-          <TouchableOpacity>
-            <Pressable onPress={() => navigation.navigate('UserAccount')}>
-            <Text style={styles.title}>
-                Sign In
-            </Text>
-            </Pressable>
-          </TouchableOpacity>
-      </View>
-    </View>
-  )
-}
-
-
 const Stack = createStackNavigator();
 
 
 export default function App() {
   return (
-    // <View style={styles.container}>
-    //   <Contact />
-    // </View>
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerStyle: {elevation: 0, shadowOpacity: 0, backgroundColor:"#6ECEB2"}}}>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Logged" component={LoggedScreen} />
+        <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="UserAccount" component={UserAccount} />
       </Stack.Navigator>
     </NavigationContainer>
-    // <NavigationContainer >
-    //   <Drawer.Navigator >
-    //     <Drawer.Screen name="Home" component={AppInfo} />
-    //     <Drawer.Screen name="SecondScreen" component={UserAccount} />
-    //   </Drawer.Navigator>
-    // </NavigationContainer>
   )
 };
 
@@ -164,7 +87,8 @@ const styles = StyleSheet.create({
     width: 200,
     height: 50,
     marginHorizontal: "20%",
-    marginBottom: 50
+    marginVertical: 50
+
   },
   appHero: {
     fontSize: 28,

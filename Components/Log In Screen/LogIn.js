@@ -3,24 +3,22 @@ import {StyleSheet, Text, View, SafeAreaView , TextInput, TouchableOpacity, Moda
 import Icon from "react-native-vector-icons/FontAwesome";
 
 
-
-import Header from "../Shared/Header";
-
 const Login = ({navigation}) => {
 
     const [modalVisible, setModalVisible] = useState(false);
 
   return(
     <View style={styles.loginContainer}>
-      <Header leftText={"Back"} rightText={"Language"} leftIconName={"chevron-left"} rightIconName={"language"} leftIconSize={18} rightIconSize={17} />
       <View style={styles.options}>
       <View
  	 style={{
-    borderColor: "black",
+    borderColor: "black"
      }}>
         <Text style={styles.signIn}>Sign in</Text>
     </View>
+    <Pressable onPress={()=> navigation.navigate('Register')}>
         <Text style={styles.register}>Register</Text>
+        </Pressable>
       </View>
       <SafeAreaView style={styles.fields}>
         <TextInput value={"Email"} style={styles.emailInput}/>
@@ -87,6 +85,7 @@ const styles = StyleSheet.create({
     flex:1,
     flexDirection: "row",
     justifyContent: "space-between",
+    marginTop:30
 
 
   },

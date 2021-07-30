@@ -10,7 +10,6 @@ const UserAccount = ({navigation}) => {
 
     return (
             <View style={styles.userAccountContainer}>
-                <Header rightIconName={"bars"} rightIconSize={25} />
                 <View style={styles.username}>
                     <Text style={styles.title}>Hi Alexandru !</Text>
                     <Text style={styles.subtitle}>Ready to recycle?</Text>
@@ -75,6 +74,8 @@ const UserAccount = ({navigation}) => {
 const styles = StyleSheet.create({
     userAccountContainer: {
         flex: 1,
+        backgroundColor: "#6ECEB2",
+        paddingHorizontal: 20
     },
     username: {
         marginBottom: 30

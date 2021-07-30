@@ -1,19 +1,17 @@
+import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
-import {StyleSheet, Text, View, SafeAreaView , TextInput, TouchableOpacity, CheckBox} from "react-native";
+import {StyleSheet, Text, View, SafeAreaView , TextInput, TouchableOpacity, CheckBox, Pressable} from "react-native";
 
 
-import Header from "../Shared/Header";
 
-
-const Register = () => {
+const Register = ({navigation}) => {
 
   return(
     <View style={styles.loginContainer}>
-      <Header leftText={"Back"} rightText={"Language"} leftIconName={"chevron-left"} rightIconName={"language"} leftIconSize={18} rightIconSize={17} />
       <View style={styles.options}>
-
+    <Pressable onPress={() => {navigation.navigate('Login')}}>
         <Text style={styles.signIn}>Sign in</Text>
-
+        </Pressable>
     <View
  	 style={{
     borderColor: "black",
@@ -45,14 +43,14 @@ const Register = () => {
 const styles = StyleSheet.create({
     loginContainer: {
       flex:1,
+      backgroundColor: "#6ECEB2",
+      paddingHorizontal: 20
     },
     options: {
       flex:1,
       flexDirection: "row",
       justifyContent: "space-between",
-      marginHorizontal: 15,
-  
-  
+      marginTop: 30
     },
     signIn: {
       fontSize: 24,
@@ -69,7 +67,6 @@ const styles = StyleSheet.create({
   
     fields: {
         flex:3,
-        marginHorizontal:15
     },
   
     emailInput: {
@@ -110,7 +107,6 @@ const styles = StyleSheet.create({
       textAlign: "center",
       paddingVertical: 15,
       borderRadius: 50,
-      marginHorizontal: 15,
       fontSize: 18,
       marginVertical: 20
     },
